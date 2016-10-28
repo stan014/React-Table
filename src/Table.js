@@ -31,13 +31,13 @@ class Table extends Component {
     })
   }
   render() {
-    const {className, header} = this.props;
+    const {className, header, index} = this.props;
     const {sort, sortKey, columns} = this.state;
     let data = this.getData();
     return <div>
       <table className={className}>
-        <Head globalHeader={header} columns={columns} sort={sort} sortKey={sortKey} onSort={this.onSort}/>
-        <Body columns={columns} data={data}/>
+        <Head index={index} globalHeader={header} columns={columns} sort={sort} sortKey={sortKey} onSort={this.onSort}/>
+        <Body index={index} columns={columns} data={data}/>
       </table>
     </div>
   }

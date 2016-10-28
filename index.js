@@ -16,7 +16,7 @@ class App extends Component {
     return <div>
     <h1 className="active">React Table </h1>
     <Filter onFilter={this.onFilter}/>
-    <Table search={search} data={data} className="table table-hover" header={<CustomHeader/>}>
+    <Table search={search} data={data} className="table table-hover" index header={<CustomHeader/>}>
       <Column className="primary" name="NAME" k="name" searchkey datakey/>
       <Column name="THEBALANCE" k="balance"/>
       <Column name="AGE" k="age"/>

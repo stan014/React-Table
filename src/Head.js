@@ -2,10 +2,10 @@ import React, { cloneElement, isValidElement } from 'react'
 import { map } from 'lodash'
 import { ASC, NONE, DESC } from './Sort'
 
-const Head = ({globalHeader, columns, onSort, sort, sortKey}) => (
+const Head = ({globalHeader, columns, onSort, sort, sortKey, index} ,) => (
   <thead>
     <tr role="row">
-    <th>#</th>
+    {index ? <th>#</th> : null}
     {map(columns, ({name, k, className, header}) => {
     let content = name;
     let element = header || globalHeader;

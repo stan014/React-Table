@@ -1,9 +1,9 @@
 import React, { cloneElement, isValidElement } from 'react'
 import { map } from 'lodash'
 
-const Row = ({data, columns, even, index}) => (
+const Row = ({data, columns, even, index, hasIndex}) => (
   <tr role="row" className={even ? "evne" : "odd"}>
-    <td>{index}</td>
+    {hasIndex ? <td>{index}</td> : null}
     {map(columns, ({name, k, format, custom, body}) => {
     let value = data[k];
     if (typeof (format) == "function") {
